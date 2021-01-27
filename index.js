@@ -15,12 +15,18 @@ require('./models/User');
 require('./services/passport');
 
 
-mongoose.connect(keys.mongoURI, { useUnifiedTopology: true, useNewUrlParser: true });
-        
+mongoose.connect(keys.mongoURI, { useUnifiedTopology: true, useNewUrlParser: true })
+.then(res =>
+    {console.log('connection done');
+}).catch(err=>{
+    console.log('connection failed' + err);
+});       
 
 // our express instance
 const app = express();
 
+
+app.use(express.json());
 
 app.use(cookieSession({
     maxAge: 30 * 24 * 60 * 60 * 1000,
@@ -35,8 +41,23 @@ app.use(passport.session());
 //    routes(app);
 // pass instance to handlers 
 require('./routes/authRoutes')(app);
+require('./routes/billingRoute')(app);
 
 
+if (process.env.NODE_ENV === 'production'){
+
+    //serves the entire build directory if route is not defined in server 
+    app.use(express.static('client/build')); 
+
+    // serves index.html if the requested route is not recognised and all the previous handlers fail to serve it 
+
+    const path = require('path');
+
+    app.get ('*', (req,res)=>{
+        res.sendFile(path.resolve(__dirname,'client','build','index.html'));
+    })
+
+}
 
 
 // if we're in production then take the service provider port at runtime,
