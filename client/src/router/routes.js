@@ -1,13 +1,14 @@
 
 import {Router , Route, Switch} from 'react-router-dom';
 import history from '../utils/history';
+
 import Header from '../components/header';
 import Landing from '../components/Landing';
+import Dashboard from '../components/Dashboard';
+import NewSurvey from '../components/surveys/NewSurvey';
+
 
 const Routes = () =>{
-
-    const Dashboard = () => <h4>Dashboard</h4>
-    const SurveyNew = () => <h4>New survey</h4>
 
 
     return(
@@ -17,7 +18,7 @@ const Routes = () =>{
                 <Switch>
                     <Route exact path='/'  component={Landing}/>
                     <Route exact path='/surveys'  component={Dashboard}/>
-                    <Route exact path='/surveys/new'  component={SurveyNew}/>
+                    <Route exact path='/surveys/new'  component={NewSurvey}/>
                 </Switch>
             </Router>
        </div>

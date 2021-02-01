@@ -10,6 +10,10 @@ import {Provider} from 'react-redux';
 import reduxThunk from 'redux-thunk';
 import RootReducer from './store/reducers';
 
+import axios from 'axios';
+
+window.axios = axios;
+
 
 const store = createStore(RootReducer, {},applyMiddleware(reduxThunk));
 

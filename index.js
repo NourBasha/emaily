@@ -10,6 +10,8 @@ const passport = require('passport');
 
 // define model = collection into mongoose
 require('./models/User');
+// define model = collection into mongoose
+require('./models/Survey');
 
 // passport strategy work 
 require('./services/passport');
@@ -42,6 +44,7 @@ app.use(passport.session());
 // pass instance to handlers 
 require('./routes/authRoutes')(app);
 require('./routes/billingRoute')(app);
+require('./routes/surveyRoutes')(app);
 
 
 if (process.env.NODE_ENV === 'production'){
@@ -50,7 +53,6 @@ if (process.env.NODE_ENV === 'production'){
     app.use(express.static('client/build')); 
 
     // serves index.html if the requested route is not recognised and all the previous handlers fail to serve it 
-
     const path = require('path');
 
     app.get ('*', (req,res)=>{
