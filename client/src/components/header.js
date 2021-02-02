@@ -1,71 +1,59 @@
-import {connect} from 'react-redux';
-import { Link } from 'react-router-dom';
-import Payments from './Payments';
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import Payments from "./Payments";
 
+const Header = (props) => {
 
-const Header = (props) =>{
+  const RenderContent = () => {
+    switch (props.auth) {
+      case null:
+        return <li></li>;
 
+      case false:
+        return (
+          <li>
+            <a href="/auth/google">Login with Google</a>
+          </li>
+        );
 
-
-    const RenderContent= ()=>{
-
-
-        switch (props.auth) {
-            case null:
-                return <li></li>;
-        
-            case false:
-                
-                return(
-                    <li><a href='/auth/google'>Login with Google</a></li>
-                );
-        
-            default:
-                return [
-                       <li key='1' > <Payments  /></li>,
-                       <li key='2' style={{margin:'0 10px'}}> Credits : {props.auth.credits} </li>,
-                        <li key='3'><a href='/api/logout'>logout</a></li>
-                    ];
-                   
-        }
-
-        }
-
-
-    
- 
-    return(
-        <nav>
-            <div className='nav-wrapper'>
-               
-                <Link to={props.auth? '/surveys' : '/'} 
-                      className='left brand-logo'
-                      >
-                        Emaily
-                </Link>
-               
-               
-                
-                    
-                    <ul className='right'>
-                   
-                      <RenderContent />
-                    </ul>
-                   
-                  
-                   
-
-            </div>
-        </nav>
-    )
-}
-
-const mapStateToProps = ({auth})=>{
-    return{
-        auth : auth.user
+      default:
+        return [
+          <li key="1">
+            {" "}
+            <Payments />
+          </li>,
+          <li key="2" style={{ margin: "0 10px" }}>
+            {" "}
+            Credits : {props.auth.credits}{" "}
+          </li>,
+          <li key="3">
+            <a href="/api/logout">logout</a>
+          </li>,
+        ];
     }
-}
+  };
 
+  return (
+    <div className='header'>
+      <nav className=" header-nav transparent">
+        <div className="nav-wrapper ">
+          <Link to={props.auth ? "/surveys" : "/"} className="left brand-logo">
+            Emaily
+          </Link>
 
+          <ul className="right">
+            <RenderContent />
+          </ul>
+        </div>
+      </nav>
+    </div>
+  );
+};
 
-export default connect (mapStateToProps)(Header);
+const mapStateToProps = ({ auth }) => {
+  return {
+    auth: auth.user,
+  };
+};
+
+export default connect(mapStateToProps)(Header);

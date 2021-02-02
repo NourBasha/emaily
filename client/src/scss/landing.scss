@@ -1,0 +1,68 @@
+.landing {
+
+    margin-top: 30px;
+        .landing-container{
+            display: inline-block;
+           
+            .head-message{
+                color: #07202f;
+                backdrop-filter: blur(4px);
+                padding: 5px;
+                border-radius: 50px;
+            }
+            .typing { 
+                color: #153942;
+            }
+    
+        }
+
+        .steps-container{
+            .steps{
+                margin-top: 60px;
+                padding: 20px;
+                background-color: #15394296;
+                border-radius: 10px;
+               li{
+                font-size: 22px;
+                color: white;
+                margin-bottom: 10px;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                &:hover {
+                    transform: scale(1.1);
+                    color: #153942;
+                }
+            }
+            }
+        }
+
+        .footer {
+            width: 100%;
+            background-color: #153942;
+
+          .footer-container{
+              padding: 20px;
+              margin: 0;
+            h3{
+                color: white;
+                font-family:'Times New Roman', Times, serif;
+            }
+            p{
+                color: white;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+
+            ul {
+            
+                 li{
+                    // display: flex;
+                    // align-content: end;         
+                    // justify-content: end;
+
+                    a{
+                    //    text-align: end;
+                    }
+                 }
+            }
+          }
+        }
+ }

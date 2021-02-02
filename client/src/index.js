@@ -10,8 +10,12 @@ import {Provider} from 'react-redux';
 import reduxThunk from 'redux-thunk';
 import RootReducer from './store/reducers';
 
-import axios from 'axios';
+import './scss/index.scss';
 
+
+
+// for testing
+import axios from 'axios';
 window.axios = axios;
 
 

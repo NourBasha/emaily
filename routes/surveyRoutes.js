@@ -32,6 +32,7 @@ module.exports = app =>{
 
     app.post('/api/surveys/webhooks', (req ,res)=>{
 
+        console.log(req.body);
          // template to show exactly what we want to extract from the url, in this case, survey id and the choice
          const p = new Path('/api/surveys/:surveyId/:choice'); 
  

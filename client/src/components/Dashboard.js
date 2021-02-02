@@ -21,24 +21,27 @@ const Dashboard = ({getSurveys, surveys})=>{
         let list = [];
     
             if(surveys){
-             list=  _.map(surveys, ({title, subject, body, yes , no,dateSent }, index) => {
+             list=  _.map(surveys, ({title, subject, body, yes , no, dateSent, lastResponded }, index) => {
                     return <div 
                          key= {index}   
                          style = {{marginTop: '20px' }}
-                         className='card  blue-grey darken-1'> 
-                              <div className='card-content white-text'>
-                                <h5 className='card-title'> {title} </h5>
-                                    <label>Survey Subject</label>
-                                    <p> {subject} </p>
-                                    <label>Survey Body</label>
-                                    <p> {body} </p>
-                                
-                                    <p className='right'>Set On {new Date(dateSent).toLocaleDateString()}</p>
-                              </div>
-                              <div className='card-action'>
-                                    <a> Yes: {yes}</a>
-                                    <a> No: {no}</a>
-                              </div>
+                         className='card horizontal  blue-grey darken-1'> 
+                            <div className='card-stacked'>
+                                <div className='card-content white-text'>
+                                    <h5 className='card-title'> {title} </h5>
+                                        <label>Survey Subject</label>
+                                        <p> {subject} </p>
+                                        <label>Survey Body</label>
+                                        <p> {body} </p>
+                                    
+                                        <p className='right'>Set On {new Date(dateSent).toLocaleDateString()}</p>
+                                </div>
+                                <div className='card-action'>
+                                        <a> Yes: {yes}</a>
+                                        <a> No: {no}</a>
+                                        <p className='right white-text'> Latest activity: { !isNaN(new Date(lastResponded)) ?new Date(lastResponded).toLocaleDateString() : 'No Activity Yet' } </p>
+                                </div>
+                            </div>
                     </div>
                 });
             }
