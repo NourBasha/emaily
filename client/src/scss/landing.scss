@@ -1,15 +1,20 @@
 .landing {
 
     margin-top: 30px;
+
+        
+
         .landing-container{
             display: inline-block;
             padding-bottom: 40px;
+            margin-bottom: 100px;
            
             .head-message{
-                color: #07202f;
+                color: white;
                 backdrop-filter: blur(4px);
                 padding: 5px;
                 border-radius: 50px;
+                font-family: 'Merriweather', serif;
             }
             .typing { 
                 color: #153942;
@@ -17,39 +22,84 @@
     
         }
 
-        .steps-container{
-            .steps{
-                margin-top: 60px;
-                padding: 20px;
-                background-color: #15394296;
-                border-radius: 10px;
-               li{
-                font-size: 22px;
-                color: white;
-                margin-bottom: 10px;
-                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-                &:hover {
-                    transform: scale(1.1);
-                    color: #153942;
-                }
+        .steps{
+            
+            position: relative; 
+            color: #FFF;
+            text-align: center;
+            overflow: hidden;
+
+            svg {
+                overflow: hidden;
+                display: block;
             }
+
+            .inverted-svg{
+                overflow: hidden;
+                display: block;
+               transform: rotate(180deg);
             }
+
+            .steps-container{
+
+                background-color: #153942;
+                display: flex;
+                justify-content: center;
+                
+                   ul {
+                       margin: 0;
+                    li{
+                      
+                        font-size: 22px;
+                        color: white;
+                    
+                        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                        &:hover {
+                            transform: scale(1.1);
+                        }
+                    }
+                   }
+                
+            }
+
+
+            .logos{
+
+             .row{
+                 margin: 0;
+                 display: flex;
+                 justify-content: center;
+                 .col{
+                        margin: 0 0 0 20px;
+                        img {
+                            width: 150px;
+                            height:  50px;
+                        }
+                 }
+             }
+            }
+
         }
+
+        
 
         .footer {
             width: 100%;
-            background-color: #153942;
-         
-            
+
+            svg {
+                display: block;
+            }
+        
             .footer-container-wrapper{
 
                 padding: 10px 20px;
-
+                background-color: #153942;
                 .footer-container{
                    
                   h3{
                       color: white;
                       font-family:'Times New Roman', Times, serif;
+                      margin: 30px 0 0 0 ;
                   }
                   p{
                       color: white;
@@ -58,9 +108,13 @@
       
                 .links-container{
                     padding-left: 40px;
+                    h4{
+                        margin: 30px 0 0 0 ;
+                        color: white;
+                    }
                     .links {
                         display: flex;
-                        justify-content: start;
+                        justify-content: flex-start;
                         ul {
                            
                              li{
