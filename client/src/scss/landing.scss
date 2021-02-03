@@ -3,6 +3,7 @@
     margin-top: 30px;
         .landing-container{
             display: inline-block;
+            padding-bottom: 40px;
            
             .head-message{
                 color: #07202f;
@@ -38,31 +39,47 @@
         .footer {
             width: 100%;
             background-color: #153942;
-
-          .footer-container{
-              padding: 20px;
-              margin: 0;
-            h3{
-                color: white;
-                font-family:'Times New Roman', Times, serif;
-            }
-            p{
-                color: white;
-                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            }
-
-            ul {
+         
             
-                 li{
-                    // display: flex;
-                    // align-content: end;         
-                    // justify-content: end;
+            .footer-container-wrapper{
 
-                    a{
-                    //    text-align: end;
-                    }
-                 }
+                padding: 10px 20px;
+
+                .footer-container{
+                   
+                  h3{
+                      color: white;
+                      font-family:'Times New Roman', Times, serif;
+                  }
+                  p{
+                      color: white;
+                      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                  }
+      
+                .links-container{
+                    padding-left: 40px;
+                    .links {
+                        display: flex;
+                        justify-content: start;
+                        ul {
+                           
+                             li{
+                                list-style: square;
+                                color: white;
+                                margin-left: 20px;
+
+                                    margin-bottom: 5px;
+                                a{
+                                    color: white;
+                                }
+                             }
+                        }
+                     }
+                }
+                }
+
             }
-          }
+
+         
         }
  }

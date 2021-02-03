@@ -37,8 +37,8 @@ const Landing = (props) => {
 
       <div className=" footer">
 
-           <div className='container'>
-           <div className='footer-container row'>
+           <div className='footer-container-wrapper'>
+           <div className='footer-container row' style={{paddingLeft:'0', paddingRight:'0'}}>
               <div className='col s6 '>
                 <h3>Emaily</h3>
                     <p>
@@ -48,15 +48,22 @@ const Landing = (props) => {
                         your visit to our website and hopefully you will come back again!
                     </p>
               </div>
-              <div className='col s6 '>
-                    <ul>
+              <div className='col s6  '>
+
+              <div className='links-container'>
+              <h3 >Related Links</h3>
+                  <div className='links'>
+                  <ul>
                         <li>
-                            <a className='right-align'> Sendgrid </a>
+                            <a href='https://sendgrid.com/' className='right-align'> Sendgrid </a>
                         </li>
                         <li>
-                            <a> Materialize CSS </a>
+                            <a href='https://materializecss.com/'> Materialize CSS </a>
                         </li>
                     </ul>
+                  </div> 
+
+              </div>
               </div>
             </div>
            </div>
