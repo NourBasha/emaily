@@ -1,5 +1,5 @@
 
-import {Router , Route, Switch, Redirect} from 'react-router-dom';
+import {Router , Route, Switch, Redirect, useLocation} from 'react-router-dom';
 import history from '../utils/history';
 
 import Header from '../components/header';
@@ -10,25 +10,36 @@ import NewSurvey from '../components/surveys/NewSurvey';
 import {connect} from 'react-redux';
 
 
-
 const Routes = ({user}) =>{
 
-
+   
     return(
        <div >{/* solely for css work */}
             <Router  history={history}> 
                <Header/>
-                <Switch>
-                    <Route exact path='/'  >
-                            {
-                                user === false || user === null
-                                ?   <Landing/> 
-                                : <Redirect to={{pathname:'/surveys'}} />
-                            }
-                    </Route>
-                    <Route exact path='/surveys'  component={Dashboard}/>
-                    <Route exact path='/surveys/new'  component={NewSurvey}/>
-                </Switch>
+
+
+                                <Switch  >
+                                        <Route exact path='/'  >
+                                                {
+                        
+                                                    user === false ||   user === null
+                                                        
+                                                        ? <Landing/> 
+                                                        
+                                                        : <Redirect to={{pathname:'/surveys'}} />
+                                                    
+                                                    
+                                                }
+                                        </Route>
+                                        <Route exact path='/surveys'  component={Dashboard}/>
+                                        <Route exact path='/surveys/new'  component={NewSurvey}/>
+                                    </Switch>
+
+                  
+
+              
+
             </Router>
        </div>
     )

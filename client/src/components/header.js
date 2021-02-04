@@ -24,7 +24,7 @@ const Header = (props) => {
           </li>,
           <li key="2" style={{ margin: "0 10px" }}>
             {" "}
-            Credits : {props.auth.credits}{" "}
+            Credit : {props.auth.credits}{" "}
           </li>,
           <li key="3">
             <a href="/api/logout">logout</a>

@@ -20,7 +20,7 @@ import { handleCreditToken } from '../store/actions/actions';
        stripeKey={process.env.REACT_APP_STRIPE_KEY}
        >
            <button className='btn' style={{cursor:'pointer'}}> 
-                Add Credits
+                Add Credit
            </button>
            </StripeCheckout>
            

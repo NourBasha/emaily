@@ -26,8 +26,9 @@ const SurveyForm = (props) => {
 
 
      return(
-         <div>
-                <form onSubmit={props.handleSubmit(values =>{ console.log(values) ; props.review()}  )}>
+         <div className='form'>
+                <form className='survey-form'
+                 onSubmit={props.handleSubmit(values =>{ console.log(values) ; props.review()}  )}>
 
 
                   { RenderFields() }

@@ -4,6 +4,10 @@ import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {getSurveys} from '../store/actions/actions';
 
+import Typed from 'react-typed';
+
+
+
 import _ from 'lodash';
 
 
@@ -23,30 +27,29 @@ const Dashboard = ({getSurveys, surveys})=>{
             if(surveys){
              list=  _.map(surveys,
                  ({title, subject, body, yes , no, dateSent, lastResponded }, index) => {
-                    return <div className='col s8 offset-s2'>
-                        <div 
-                         key= {index}   
-                         style = {{marginTop: '20px' }}
-                         className='card horizontal  blue-grey darken-1'> 
-                            <div className='card-stacked'>
-                                <div className='card-content white-text'>
-                                    <h5 className='card-title'> {title} </h5>
-                                        <label>Survey Subject</label>
-                                        <p> {subject} </p>
-                                        <label>Survey Body</label>
-                                        <p> {body} </p>
-                                    
-                                        <p className='right'>Set On {new Date(dateSent).toLocaleDateString()}</p>
+                    return <div  key= {index}  
+                                 className='col s8 m6  offset-s2    survey-col'>
+
+                                <div  className='card horizontal  blue-grey darken-1'> 
+                                    <div className='card-stacked'>
+                                        <div className='card-content white-text'>
+                                            <h5 className='card-title center'> {title} </h5>
+                                                <p className='subject'>Subject: &nbsp; {subject} </p>
+
+                                                <p className='body'>Content: &nbsp; {body} </p>
+                                            
+                                                <p className='sent-date left'>Date sent: &nbsp; {new Date(dateSent).toLocaleDateString()}</p>
+                                        </div>
+                                        <div className='card-action'>
+                                                <p className='choise'> Yes: {yes}</p>
+                                                <p className='choise'> No: {no}</p>
+                                                <p className='right white-text'> 
+                                                Latest activity: &nbsp;
+                                                { !isNaN(new Date(lastResponded)) ?new Date(lastResponded).toLocaleDateString() : 'No Activity Yet' } </p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className='card-action'>
-                                        <a> Yes: {yes}</a>
-                                        <a> No: {no}</a>
-                                        <p className='right white-text'> 
-                                        Latest activity:
-                                         { !isNaN(new Date(lastResponded)) ?new Date(lastResponded).toLocaleDateString() : 'No Activity Yet' } </p>
-                                </div>
-                            </div>
-                    </div>
+
                     </div>
                 });
             }
@@ -57,19 +60,47 @@ const Dashboard = ({getSurveys, surveys})=>{
 
 
     return(
-        <div>
+        <div className='dashboard'>
 
           
           <div className='container'>
 
-                <div className='row'>
-                       <DisplaySurveys />
-                </div>
+                {
+                   surveys.length
+                    ?
+                    (
+                        <div className='row surveys-row' >
+                        <DisplaySurveys />
+                        </div>
+                    )
+                    : 
+                     (
+                        <div className='row welcome-message' style={{height:'100vh', marginBottom:'0'}} >
+                               <h2 className='center'>Welcome to Emaily</h2>
+
+                               <p className='center'>
+                                        <Typed
+                                        strings={['make sure you have enough credit','start sending surveys now']}
+                                        typeSpeed={50}
+                                        backSpeed={40}
+                                        loop
+                                        >
+
+
+                                        </Typed>
+
+                               </p>
+                        </div>
+                    )
+
+                }
+
+              
           </div>
          
 
             <div className="fixed-action-btn">
-                <Link to='/surveys/new' className="btn-floating btn-large red">
+                <Link to='/surveys/new' className="btn-floating btn-large green">
                     <i className="large material-icons">add</i>
                 </Link>
             </div>
