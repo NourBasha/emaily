@@ -17,12 +17,7 @@ require('./models/Survey');
 require('./services/passport');
 
 
-mongoose.connect(keys.mongoURI, { useUnifiedTopology: true, useNewUrlParser: true })
-.then(res =>
-    {console.log('connection done');
-}).catch(err=>{
-    console.log('connection failed' + err);
-});       
+mongoose.connect(keys.mongoURI, { useUnifiedTopology: true, useNewUrlParser: true });     
 
 // our express instance
 const app = express();

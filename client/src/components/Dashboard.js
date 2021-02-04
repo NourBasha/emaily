@@ -21,8 +21,10 @@ const Dashboard = ({getSurveys, surveys})=>{
         let list = [];
     
             if(surveys){
-             list=  _.map(surveys, ({title, subject, body, yes , no, dateSent, lastResponded }, index) => {
-                    return <div 
+             list=  _.map(surveys,
+                 ({title, subject, body, yes , no, dateSent, lastResponded }, index) => {
+                    return <div className='col s8 offset-s2'>
+                        <div 
                          key= {index}   
                          style = {{marginTop: '20px' }}
                          className='card horizontal  blue-grey darken-1'> 
@@ -39,9 +41,12 @@ const Dashboard = ({getSurveys, surveys})=>{
                                 <div className='card-action'>
                                         <a> Yes: {yes}</a>
                                         <a> No: {no}</a>
-                                        <p className='right white-text'> Latest activity: { !isNaN(new Date(lastResponded)) ?new Date(lastResponded).toLocaleDateString() : 'No Activity Yet' } </p>
+                                        <p className='right white-text'> 
+                                        Latest activity:
+                                         { !isNaN(new Date(lastResponded)) ?new Date(lastResponded).toLocaleDateString() : 'No Activity Yet' } </p>
                                 </div>
                             </div>
+                    </div>
                     </div>
                 });
             }
@@ -54,14 +59,22 @@ const Dashboard = ({getSurveys, surveys})=>{
     return(
         <div>
 
-          {/* { DisplaySurveys() } */}
-          <DisplaySurveys />
+          
+          <div className='container'>
+
+                <div className='row'>
+                       <DisplaySurveys />
+                </div>
+          </div>
+         
 
             <div className="fixed-action-btn">
                 <Link to='/surveys/new' className="btn-floating btn-large red">
                     <i className="large material-icons">add</i>
                 </Link>
             </div>
+
+
         </div>
     )
 }

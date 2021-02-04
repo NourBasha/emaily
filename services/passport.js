@@ -39,5 +39,3 @@ passport.use(
     }
   )
 );
-
-// mongoose.connection.readyState
