@@ -60,7 +60,7 @@ const Dashboard = ({getSurveys, surveys})=>{
 
 
     return(
-        <div className='dashboard'>
+        <div className='dashboard' style={{height:'100vh'}}>
 
           
           <div className='container'>
