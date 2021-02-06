@@ -5,8 +5,23 @@
 
         margin-top: 20px;
         background-color: #153942;
-        padding: 30px 60px;
+        padding: 40px 60px;
         border-radius: 10px;
+
+        @extend %animate-inward-action;
+     
+        
+        h5{
+            margin-top: -10px;
+            margin-bottom: 15px;
+            color: $color-hightlight;
+        }
+        hr{
+            height: 1px;
+            background-color: rgba($color: #ffffff, $alpha: 1.0);
+            border: none;
+            margin-bottom: 20px;
+        }
     .survey-form{
 
         padding: 30px 60px;

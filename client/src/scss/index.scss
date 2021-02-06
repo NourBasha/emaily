@@ -1,5 +1,48 @@
 
 
+$color-main: #0e8befb8 ;
+$color-secondary: #153942;  
+$color-hightlight: #ffbb01;
+$color-hightlight-dark: #a1863b;
+$color-white : #FFF ;
+
+
+@keyframes animate-inward {
+    0%   {
+        opacity: 0;
+    }
+   
+    100% {
+        opacity: 1;
+    }
+  }
+
+  @keyframes animate-upward {
+    0%   {
+       margin-top: 200px;
+    }
+   
+    100% {
+        margin-top: 0;
+    }
+  }
+
+  %animate-inward-action {
+      opacity: 0;
+    animation-name: animate-inward;
+    animation-duration: 1s;
+    animation-delay: .1s;
+    animation-fill-mode: forwards;
+  }
+  %animate-inward-upward {
+    margin-top: 0;
+    animation-name: animate-upward;
+    animation-duration: 1s;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+  }
+
+
 @import './app.scss';
 @import './header.scss';
 @import './landing.scss';

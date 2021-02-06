@@ -10,17 +10,21 @@ import { withRouter } from "react-router-dom";
 const SurveyFormReview = ({ review, surveyValues, submitSurvey, history }) => {
   return (
     <div className="form-review">
-        <div className="reviw-entries">
-                    <h3 className='center'>Please review your entries</h3>
+        <div className="review-entries">
+          
+                    <h5 className='center head-message'>Please review your entries</h5>
+                    <hr/>
 
                     {_.map(FIELDS, ({ label, name }, index) => {
                     return (
                         <div key={index}>
-                        <h5>{label}</h5>
+                        <h5 className='label'>{label}</h5>
                         <p>{surveyValues[name]}</p>
                         </div>
                     );
                     })}
+
+                      <hr/>
 
                     <button
                     className="btn left yellow darken-3 white-text"

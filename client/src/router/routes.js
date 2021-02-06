@@ -1,5 +1,5 @@
 
-import {Router , Route, Switch, Redirect, useLocation} from 'react-router-dom';
+import {Router , Route, Switch, Redirect} from 'react-router-dom';
 import history from '../utils/history';
 
 import Header from '../components/header';

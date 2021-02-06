@@ -1,26 +1,45 @@
 
 
 
-.form-review {
+.form-review{
 
     margin-top: 20px;
     background-color: #153942 ;
     padding: 10px 60px 60px 60px   ;
     border-radius: 10px;
 
-    .reviw-entries{
+    
+        @extend %animate-inward-action;
 
-        h3{
-            color: white;
+    .review-entries{
+
+        .head-message{
+            margin-top: 25px;
+            margin-bottom: 15px;
+            color: $color-hightlight;
+
         }
 
-        h5{
+        hr{
+            height: 1px;
+            background-color: rgba($color: #ffffff, $alpha: 1.0);
+            border: none;
+            margin-bottom: 20px;
+        }
+
+     
+
+        .label{
             color: white;
         }
 
         p { 
             margin-left: 12px;
             color: #00ccff;
+        }
+
+        button {
+            text-transform: none;
         }
       
     }

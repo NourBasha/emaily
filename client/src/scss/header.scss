@@ -4,12 +4,24 @@
     .header-nav{
 
         padding: 0 20px;
+        background-color: $color-main;
+
+      
+           
+           .nav-wrapper{
+            .brand-logo{
+                display: none;
+                font-family:'Times New Roman', Times, serif;
+            }
+       
+            
+            ul{
+                
+            }
+           }
 
 
-        .brand-logo{
 
-            font-family:'Times New Roman', Times, serif;
-        }
     }
     
 

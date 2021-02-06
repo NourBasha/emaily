@@ -6,10 +6,6 @@ const stripe = require('stripe')(keys.stripeSecretKey);
 const requireLogin = require('../middlewares/requireLogin');
 
 
-// const mongoose = require('mongoose');
-
-// const User = mongoose.model('users');
-
 module.exports = (app)  =>{
 
 
@@ -30,7 +26,6 @@ app.post('/api/stripe', requireLogin ,async (req,res) => {
 
     res.send(user);
 
-    //   res.send(user);
 
 });
 

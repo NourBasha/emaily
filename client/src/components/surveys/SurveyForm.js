@@ -27,6 +27,10 @@ const SurveyForm = (props) => {
 
      return(
          <div className='form'>
+                    <h5 className='center'>Fill out your survey entries</h5>
+
+                    <hr />
+
                 <form className='survey-form'
                  onSubmit={props.handleSubmit(values =>{ console.log(values) ; props.review()}  )}>
 

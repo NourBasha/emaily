@@ -1,48 +1,92 @@
+
+%logo-col {
+    .col{
+        margin: 0 0 0 20px;
+        img {
+            width: 150px;
+            height:  50px;
+        }
+ }
+}
+
 .landing {
 
-    margin-top: 30px;
+   
 
         
-
-        .landing-container{
-            display: inline-block;
-            padding-bottom: 40px;
-            margin-bottom: 100px;
+        .head{
            
-            .head-message{
-                color: white;
-                backdrop-filter: blur(4px);
-                padding: 5px;
-                border-radius: 50px;
-                font-family: 'Merriweather', serif;
+            .landing-container{
+                display: inline-block;
+                padding-bottom: 40px;
+                margin-bottom: 100px;
+                
+               
+                .head-message{
+                    color: $color-white ;
+                    backdrop-filter: blur(6px);
+                    padding: 10px;
+                    border-radius: 50px;
+                    font-size: 3rem;
+                    font-weight: bold;
+                    font-family: 'Merriweather', serif;
+                   
+                    animation: pop-in .6s ease-out forwards;
+                    animation-delay: 0s;
+                    opacity: 0;
+                }
+
+                @keyframes pop-in {
+                    0% {
+                        opacity: 0;
+                        transform: translateY(-4rem) scale(.8);
+                      }
+                      100% {
+                        opacity: 1;
+                        transform: none;
+                      }
+                  }
+
+                  
+                .typing { 
+                    color: $color-secondary;
+                    font-weight: bold;
+                    animation: pop-in .6s ease-out forwards;
+                    animation-delay: .2s;
+                    opacity: 0;
+                }
+        
             }
-            .typing { 
-                color: #153942;
-            }
-    
         }
+
+       
 
         .steps{
             
             position: relative; 
-            color: #FFF;
+            color: $color-white;
             text-align: center;
             overflow: hidden;
 
-            svg {
-                overflow: hidden;
-                display: block;
+            .svg{
+                svg {
+                    overflow: hidden;
+                    display: block;               
+                }
+
             }
+            
+           
 
             .inverted-svg{
-                overflow: hidden;
-                display: block;
                transform: rotate(180deg);
             }
 
             .steps-container{
 
-                background-color: #153942;
+                background-color: $color-secondary;
+                // padding-top: 50px;
+                // padding-bottom: 50px;
                 display: flex;
                 justify-content: center;
                 
@@ -51,7 +95,7 @@
                     li{
                       
                         font-size: 22px;
-                        color: white;
+                        color: $color-white;
                     
                         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
                         &:hover {
@@ -69,13 +113,15 @@
                  margin: 0;
                  display: flex;
                  justify-content: center;
-                 .col{
-                        margin: 0 0 0 20px;
-                        img {
-                            width: 150px;
-                            height:  50px;
-                        }
+
+                 .first-block{
+                    @extend %logo-col ; 
                  }
+                 .second-block{
+                    @extend %logo-col ; 
+                 }
+
+                
              }
             }
 
@@ -93,24 +139,29 @@
             .footer-container-wrapper{
 
                 padding: 10px 20px;
-                background-color: #153942;
+                background-color: $color-secondary;
                 .footer-container{
+
+                  
+                        h3{
+                            color: $color-white;
+                            font-family:'Times New Roman', Times, serif;
+                            margin: 30px 0 0 0 ;
+                        }
+                        p{
+                            color: $color-white;
+                            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                            font-size: 18px;
+                        }
+                    
                    
-                  h3{
-                      color: white;
-                      font-family:'Times New Roman', Times, serif;
-                      margin: 30px 0 0 0 ;
-                  }
-                  p{
-                      color: white;
-                      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-                  }
+               
       
                 .links-container{
                     padding-left: 40px;
                     h4{
                         margin: 30px 0 0 0 ;
-                        color: white;
+                        color: $color-white;
                     }
                     .links {
                         display: flex;
@@ -119,12 +170,13 @@
                            
                              li{
                                 list-style: square;
-                                color: white;
+                                color: $color-white;
                                 margin-left: 20px;
 
                                     margin-bottom: 5px;
                                 a{
-                                    color: white;
+                                    color: $color-white;
+                                    font-size: 18px;
                                 }
                              }
                         }

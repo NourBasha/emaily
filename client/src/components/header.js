@@ -35,15 +35,21 @@ const Header = (props) => {
 
   return (
     <div className='header'>
-      <nav className=" header-nav transparent">
+      <nav className=" header-nav ">
         <div className="nav-wrapper ">
-          <Link to={props.auth ? "/surveys" : "/"} className="left brand-logo">
+         
+       
+         <Link to={props.auth ? "/surveys" : "/"} className="left brand-logo">
             Emaily
           </Link>
-
+        
+         
+      
           <ul className="right">
-            <RenderContent />
-          </ul>
+              <RenderContent />
+            </ul>
+        
+         
         </div>
       </nav>
     </div>

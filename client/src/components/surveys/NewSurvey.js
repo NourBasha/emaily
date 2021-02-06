@@ -14,7 +14,7 @@ const NewSurvey = (props) => {
 
     return (
 
-        <div className='container' style={{height:'100vh'}}> 
+        <div className='container' style={{height:'100vh'}} > 
                     {
                         !showFormReview
                         ?
