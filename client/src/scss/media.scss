@@ -5,7 +5,7 @@
 
     .header-nav{
        
-
+       
        
 
         .nav-wrapper{
@@ -13,7 +13,7 @@
          
            
           .brand-logo{
-           display: block;
+          // display: block;
           }
           
         
@@ -25,8 +25,6 @@
          
         }
         
-
-      
     }
     
 
@@ -41,7 +39,7 @@
     .header-nav{
        
 
-       
+       padding: 0 5px;
 
         .nav-wrapper{
           
@@ -54,7 +52,9 @@
         
             ul {
               li{
-
+                a{
+                  padding: 0 5px;
+                }
               }
             }
          
@@ -69,7 +69,7 @@
 
 
   .landing {
-    margin-top: 10px;
+    margin-top: 70px;
 
     .head {
       .landing-container {

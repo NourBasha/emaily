@@ -19,15 +19,15 @@ const Header = (props) => {
       default:
         return [
           <li key="1">
-            {" "}
+           
             <Payments />
           </li>,
           <li key="2" style={{ margin: "0 10px" }}>
-            {" "}
+                
             Credit : {props.auth.credits}{" "}
           </li>,
           <li key="3">
-            <a href="/api/logout">logout</a>
+            <a href="/api/logout" title='logout'>logout</a>
           </li>,
         ];
     }
@@ -37,8 +37,6 @@ const Header = (props) => {
     <div className='header'>
       <nav className=" header-nav ">
         <div className="nav-wrapper ">
-         
-       
          <Link to={props.auth ? "/surveys" : "/"} className="left brand-logo">
             Emaily
           </Link>

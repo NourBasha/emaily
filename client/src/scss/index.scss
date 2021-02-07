@@ -47,11 +47,11 @@ $color-white : #FFF ;
 @import './header.scss';
 @import './landing.scss';
 @import './dashboard.scss';
+@import './payment.scss';
 
 @import './survey_form/survey_form.scss';
 @import './survey_form/survey_field.scss';
 @import './survey_form/form_review.scss';
-
-
+@import './thankUser.scss';
 
 @import './media.scss';

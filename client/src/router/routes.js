@@ -8,6 +8,7 @@ import Dashboard from '../components/Dashboard';
 import NewSurvey from '../components/surveys/NewSurvey';
 
 import {connect} from 'react-redux';
+import ThankUser from '../components/ThankUser';
 
 
 const Routes = ({user}) =>{
@@ -34,6 +35,7 @@ const Routes = ({user}) =>{
                                         </Route>
                                         <Route exact path='/surveys'  component={Dashboard}/>
                                         <Route exact path='/surveys/new'  component={NewSurvey}/>
+                                        <Route exact path='/reply/thanks' component={ThankUser}/>
                                     </Switch>
 
                   

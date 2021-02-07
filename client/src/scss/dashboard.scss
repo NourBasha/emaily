@@ -30,6 +30,7 @@
                 .card-stacked{
 
                     .card-content{
+                        margin-bottom: 10px;
 
                        .title{
                            height: 25%;
@@ -63,6 +64,7 @@
                         .sent-date{
                             
                             margin-top: 15px;
+                            margin-bottom: 10px;
                             font-size: 12px;
                             color: $color-white;
                             color: $color-hightlight-dark;
@@ -116,4 +118,5 @@
                 }
 
     }
+
 }

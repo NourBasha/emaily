@@ -26,8 +26,10 @@ module.exports = app =>{
 
     app.get('/api/surveys/:surveyid/:answer', (req,res)=>{
         console.log(req.body);
-        res.send('thanks!');
+        //res.send('thanks!');
+        res.redirect('/reply/thanks');
     })
+
 
 
     app.post('/api/surveys/webhooks', (req ,res)=>{

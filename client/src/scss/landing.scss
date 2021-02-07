@@ -69,6 +69,7 @@
             overflow: hidden;
 
             .svg{
+                margin-bottom: -5px;
                 svg {
                     overflow: hidden;
                     display: block;               
@@ -89,6 +90,8 @@
                 // padding-bottom: 50px;
                 display: flex;
                 justify-content: center;
+                position: inherit;
+                z-index: 3;
                 
                    ul {
                        margin: 0;
@@ -109,10 +112,15 @@
 
             .logos{
 
+                margin-top: -5px;
+
              .row{
+
                  margin: 0;
                  display: flex;
                  justify-content: center;
+                 position: inherit;
+                 z-index: 3;
 
                  .first-block{
                     @extend %logo-col ; 
@@ -132,14 +140,21 @@
         .footer {
             width: 100%;
 
-            svg {
-                display: block;
+            .footer-svg{
+                margin-top: -4px;
+                margin-bottom: -5px;
+                svg {
+                    display: block;
+                }
             }
+           
         
             .footer-container-wrapper{
 
                 padding: 10px 20px;
                 background-color: $color-secondary;
+                z-index: 3;
+                position: inherit;
                 .footer-container{
 
                   

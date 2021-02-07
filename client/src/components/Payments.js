@@ -19,9 +19,13 @@ import { handleCreditToken } from '../store/actions/actions';
        token={token => dispatch(handleCreditToken(token))}
        stripeKey={process.env.REACT_APP_STRIPE_KEY}
        >
-           <button className='btn' style={{  textTransform:'none'}}> 
-                Add Credit
-           </button>
+          
+          
+                <i className='material-icons add-credit' >add_shopping_cart</i>
+           
+         
+                
+         
            </StripeCheckout>
            
 
