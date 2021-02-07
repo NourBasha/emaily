@@ -30,14 +30,14 @@ $color-white : #FFF ;
   %animate-inward-action {
       opacity: 0;
     animation-name: animate-inward;
-    animation-duration: 1s;
-    animation-delay: .1s;
+    animation-duration: 0.4s;
+    animation-delay: .03s;
     animation-fill-mode: forwards;
   }
   %animate-inward-upward {
     margin-top: 0;
     animation-name: animate-upward;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
     animation-delay: 0s;
     animation-fill-mode: forwards;
   }
@@ -53,5 +53,6 @@ $color-white : #FFF ;
 @import './survey_form/survey_field.scss';
 @import './survey_form/form_review.scss';
 @import './thankUser.scss';
+
 
 @import './media.scss';

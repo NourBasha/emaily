@@ -24,11 +24,11 @@ const Routes = ({user}) =>{
                                         <Route exact path='/'  >
                                                 {
                         
-                                                    user === false ||   user === null
+                                                    user 
                                                         
-                                                        ? <Landing/> 
+                                                        ?  <Redirect to={{pathname:'/surveys'}} />
                                                         
-                                                        : <Redirect to={{pathname:'/surveys'}} />
+                                                        :  <Landing/> 
                                                     
                                                     
                                                 }

@@ -19,7 +19,6 @@ app.post('/api/stripe', requireLogin ,async (req,res) => {
         source : req.body.id // token id 
     });
 
-
     req.user.credits += 5;
 
     const user = await req.user.save();

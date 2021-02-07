@@ -6,8 +6,13 @@ import sendgrid from '../assets/sendgrid.png';
 import materialize from '../assets/mtz.png';
 
 
+ import {connect} from 'react-redux';
 
-const Landing = (props) => {
+
+const Landing = ({user}) => {
+
+
+
   return (
     <div className="landing" style={{height:'100vh'}}>
 
@@ -137,4 +142,11 @@ const Landing = (props) => {
     </div>
   );
 };
-export default Landing;
+
+const mapStateToProps = ({auth})=>{
+  return {
+      user : auth.user
+  }
+}
+
+export default connect(mapStateToProps)(Landing);

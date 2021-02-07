@@ -9,7 +9,9 @@ import _ from "lodash";
 
 const Dashboard = ({ getSurveys, surveys }) => {
   useEffect(() => {
+    
     getSurveys();
+
   }, [getSurveys]);
 
   const DisplaySurveys = () => {
@@ -108,12 +110,14 @@ const Dashboard = ({ getSurveys, surveys }) => {
 const mapStateToProps = ({ surveys }) => {
   return {
     surveys: surveys.surveyList,
+  //  user : auth.user
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     getSurveys: () => dispatch(getSurveys()),
+  //  setLoadingPage : (flag) => dispatch(setLoading(flag))
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
