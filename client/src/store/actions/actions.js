@@ -22,13 +22,14 @@ export const handleCreditToken = (token) => async dispatch =>{
 
 export const submitSurvey = (values) => async dispatch =>{
 
-   const res = await axios.post('/api/surveys',values);
+  const res = await axios.post('/api/surveys',values);
     
-    dispatch({type:FETCH_USER, payload: res.data});
+   dispatch({type:FETCH_USER, payload: res.data});
     
     setTimeout(() => {
         dispatch({type:LOADING, payload: null});
-    }, 400);
+    }, 500);
+
 }
 
 
@@ -45,5 +46,14 @@ export const setLoading = (load) => dispatch =>{
     dispatch({type:LOADING, payload: load});
 }
 
+export const deleteSurvey = (surveyID) => async dispatch => {
 
+    const res = await axios.delete('/api/delete-survey', {data:{surveyID}});
+
+    dispatch({type:GET_SURVEYS, payload: res.data});
+
+   setTimeout(() => {
+    dispatch({type:LOADING, payload: false});
+   }, 300);
+}
 

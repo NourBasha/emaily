@@ -19,10 +19,15 @@ const SurveyFormReview = ({ review, surveyValues, submitSurvey, surveySending , 
 
     if(surveySending===null){
       setTimeout(() => {
-         setLoading(false);
-          history.push('/surveys');
         
-      }, 1500);
+         setLoading(false);
+
+         setTimeout(() => {
+            history.push('/surveys');
+         }, 800);
+         
+        
+      }, 1000);
     }
   },[surveySending])
 

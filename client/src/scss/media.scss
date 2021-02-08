@@ -226,7 +226,12 @@
 
                   .card-action{
 
+
+                    padding-left: 10px;
+                    padding-right: 10px;
+
                       .choise{
+                        font-size: 14px;
                          
                           &:hover {
                            
@@ -234,11 +239,12 @@
                       }
                       p{
                         
-
                       }
 
                       .latest-activity{
-                        margin-top: 15px;
+                        margin-top: 0;
+
+                        font-size: 12px;
                          
                       }
                   }
@@ -254,13 +260,16 @@
 
   .welcome-message{
 
+     .message-wrapper{
       h2{
         
+        font-size: 24px;
 
       }
       p{
-          
+          font-size: 14px;
               }
+     }
 
   }
 }
@@ -271,6 +280,8 @@
 
   
         padding: 50px 20px;
+
+        margin: 20px 10px 10px 10px;
         
       .survey-form{
 
@@ -282,38 +293,45 @@
       }
 }
 
+.form-review-container{
 
-
-.form-review {
+  .form-review {
 
  
-  padding: 10px 20px 60px 20px   ;
+    padding: 10px 20px 60px 20px   ;
+    margin-left: 10px;
+    margin-right: 10px;
   
-
-  .review-entries{
-      hr {
-         margin-bottom: 40px;
-      }
-
-      h3{
-         
-      }
-
-      h5{
-         
-      }
-
-      p { 
-        
-      }
-
-      button {
-         
-      }
     
+  
+    .review-entries{
+       
+        .head-message{
+          font-size: 22px;
+        }
+      hr {
+           margin-bottom: 40px;
+        }
+  
+       .label {
+         font-size: 14px;
+       }
+  
+        p { 
+          
+        }
+  
+        button {
+           
+        }
+      
+    }
+  
+  
   }
 
-
 }
+
+
 
 }

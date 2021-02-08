@@ -108,4 +108,17 @@ module.exports = app =>{
 
     });
 
+
+
+    app.delete('/api/delete-survey', requireLogin , async (req,res)=>{
+
+
+        await Survey.deleteOne({_id: req.body.surveyID}) ;
+
+        const surveys = await Survey.find({_user: req.user.id}).select({recipients:false});
+
+         res.send(surveys);
+
+    });
+
 };

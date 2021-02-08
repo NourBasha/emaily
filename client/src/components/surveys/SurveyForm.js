@@ -40,14 +40,14 @@ const SurveyForm = (props) => {
 
                     <Link to='/surveys' className='red btn-flat left white-text' > 
                         Cancel
-                       <i className="material-icons right">cancel</i>
+                       <i className="tiny material-icons right">cancel</i>
                     </Link>
 
 
                     <button className='teal btn-flat right white-text' 
                               type='submit'> 
                         Next
-                       <i className="material-icons right">done</i>
+                       <i className="tiny material-icons right">done</i>
                     </button>
 
 

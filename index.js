@@ -24,8 +24,6 @@ mongoose.connect(keys.mongoURI, { useUnifiedTopology: true, useNewUrlParser: tru
     console.log('connection FAIL');
 });     
 
-
-
 // our express instance
 const app = express();
 

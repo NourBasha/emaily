@@ -14,14 +14,14 @@ import { handleCreditToken } from '../store/actions/actions';
 
        <StripeCheckout 
        name='Emaily'
-       description='$5 for 5 email credits'
+       description='for credit card repeat "42" '
        amount={500} // money amount in cents
        token={token => dispatch(handleCreditToken(token))}
        stripeKey={process.env.REACT_APP_STRIPE_KEY}
        >
           
           
-                <i className='material-icons add-credit' >add_shopping_cart</i>
+                <i className='material-icons add-credit' title='Add credit' >add_shopping_cart</i>
            
          
                 

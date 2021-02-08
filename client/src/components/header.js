@@ -22,7 +22,7 @@ const Header = (props) => {
            
             <Payments />
           </li>,
-          <li key="2" style={{ margin: "0 10px" }}>
+          <li key="2" title='current credit' style={{ margin: "0 10px" }}>
                 
             Credit : {props.auth.credits}{" "}
           </li>,

@@ -6,7 +6,7 @@ const {Schema} = mongoose;
 
 const userSchema = new Schema({
         googleID: String,
-        credits : {type : Number, default : 0}
+        credits : {type : Number, default : 5}
 })
 
 // ceate the users collection if not existing 
