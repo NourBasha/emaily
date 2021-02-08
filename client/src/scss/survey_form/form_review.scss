@@ -1,50 +1,87 @@
 
 
 
-.form-review{
+.form-review-container {
 
-    margin-top: 20px;
-    background-color: #153942 ;
-    padding: 10px 60px 60px 60px   ;
-    border-radius: 10px;
 
+    .form-review{
+
+        margin-top: 20px;
+        background-color: #153942 ;
+        padding: 10px 60px 60px 60px   ;
+        border-radius: 10px;
     
-        @extend %animate-inward-action;
-
-    .review-entries{
-
-        overflow-wrap: anywhere;
-
-        .head-message{
-            margin-top: 25px;
-            margin-bottom: 15px;
-            color: $color-hightlight;
-
+        
+            @extend %animate-inward-action;
+    
+        .review-entries{
+    
+            overflow-wrap: anywhere;
+    
+            .head-message{
+                margin-top: 25px;
+                margin-bottom: 15px;
+                color: $color-hightlight;
+    
+            }
+    
+            hr{
+                height: 1px;
+                background-color: rgba($color: #ffffff, $alpha: 1.0);
+                border: none;
+                margin-bottom: 20px;
+            }
+    
+         
+    
+            .label{
+                color: white;
+            }
+    
+            p { 
+                margin-left: 12px;
+                color: #00ccff;
+            }
+    
+            button {
+                text-transform: none;
+            }
+          
         }
-
-        hr{
-            height: 1px;
-            background-color: rgba($color: #ffffff, $alpha: 1.0);
-            border: none;
-            margin-bottom: 20px;
-        }
-
-     
-
-        .label{
-            color: white;
-        }
-
-        p { 
-            margin-left: 12px;
-            color: #00ccff;
-        }
-
-        button {
-            text-transform: none;
-        }
-      
+    
+    
     }
 
+   .overlay {
 
+     ._loading_overlay_wrapper--active {
+         position: inherit;
+     }
+
+
+    .loading-overlay {
+        // position: absolute;
+        // top: 50%;
+        // left: 50%;
+        // margin: 50px;
+        
+    }
+   }
+
+   .sent-success-message{
+       margin-top: 10px;
+       margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $color-secondary;
+        padding: 10px 0;
+        border-radius: 10px;
+
+        .sent-success-icon{
+            padding: 2px;
+            border-radius: 20px;
+            background-color: #4CAF50 ;
+        }
+   }
 }

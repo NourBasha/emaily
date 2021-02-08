@@ -17,6 +17,7 @@
                 
         .survey-col{
             margin-top: 10px;
+            margin-right:auto ;
 
             .card {
 
@@ -37,7 +38,7 @@
                            height: 25%;
                             .card-title{
                                 font-size: 26px;
-                                color: lighten( $color-main, 80%);
+                                color: $color-white;
                                 line-height: 1;
                             }
                        }
@@ -53,13 +54,13 @@
                         .subject{
                             font-size: 18px;
                             margin-top: 20px;
-                            color: $color-white;
+                            color: darken($color:$color-white, $amount: 15%);
                         }
 
                         .body{
                             margin-top: 10px;
                             font-size: 16px;
-                            color: $color-white;
+                            color: darken($color:$color-white, $amount: 15%);
                            
                         }
 
@@ -68,8 +69,8 @@
                             margin-top: 15px;
                             margin-bottom: 10px;
                             font-size: 12px;
-                            color: $color-white;
-                            color: $color-hightlight-dark;
+                            
+                            color: darken($color: $color-hightlight, $amount: 10%);
                         }
                       }
 
@@ -94,7 +95,7 @@
                         }
 
                         .latest-activity{
-                            color: $color-hightlight-dark;
+                            color: darken($color: $color-hightlight, $amount: 10%);
                         }
                     }
 
@@ -123,6 +124,58 @@
             font-weight: bold;
                 }
 
+
+        .directions{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 10px 5px 10px;
+                p{
+                    color: white;
+                    margin-bottom: 0px;
+                    padding: 20px 30px;
+                    background-color: $color-secondary;
+                    border-radius: 10px;
+                }
+          
+            }
+
+        .mock-data{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+                background-color: $color-secondary;
+                border-radius: 20px;
+                margin-left:  50px;
+                margin-right:  50px;
+                
+                ul{
+                    li{
+                         
+                        font-size: 18px;
+                        color: $color-white;
+                    
+                        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                    }
+                }
+
+        }
+       
+    }
+
+    .no-credit {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        margin: 20px;
+        border-radius: 10px;
+        background-color: $color-secondary;
+        p{
+            font-size: 18px;
+            color: $color-white;
+        }
     }
 
 }

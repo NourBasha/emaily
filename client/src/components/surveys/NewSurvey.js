@@ -14,7 +14,7 @@ const NewSurvey = (props) => {
 
     return (
 
-        <div className='container' style={{height:'100vh'}} > 
+        <div className='container wrapper-form'  > 
                     {
                         !showFormReview
                         ?
@@ -22,7 +22,7 @@ const NewSurvey = (props) => {
                                 <SurveyForm  review={()=>setFormReviewVisible(true)} />       
                             )
                         : 
-                         (    <SurveyFormReview   review={()=>setFormReviewVisible(false)}  />)        
+                         (    <SurveyFormReview   review={()=>setFormReviewVisible(false)} /> )        
                     }
         </div>
 

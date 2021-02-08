@@ -16,7 +16,14 @@ require('./models/Survey');
 // passport strategy work 
 require('./services/passport');
 
-mongoose.connect(keys.mongoURI, { useUnifiedTopology: true, useNewUrlParser: true });     
+mongoose.connect(keys.mongoURI, { useUnifiedTopology: true, useNewUrlParser: true })
+    .then(res=>{
+        console.log('connection OK');
+})
+.catch(err=>{
+    console.log('connection FAIL');
+});     
+
 
 
 // our express instance

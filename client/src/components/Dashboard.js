@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import { getSurveys } from "../store/actions/actions";
 
@@ -7,7 +7,23 @@ import Typed from "react-typed";
 
 import _ from "lodash";
 
-const Dashboard = ({ getSurveys, surveys }) => {
+const Dashboard = ({ getSurveys, surveys , user }) => {
+
+  const [noCredit, setNoCredit] = useState(false);
+
+  const history = useHistory();
+
+  const handleAddSurvey = () =>{
+      if(user.credits<1){
+          setNoCredit(true);
+      }else {
+        setNoCredit(false);
+        history.push('/surveys/new')
+      }
+  }
+
+
+
   useEffect(() => {
     
     getSurveys();
@@ -66,8 +82,19 @@ const Dashboard = ({ getSurveys, surveys }) => {
 
   return (
     <div className="dashboard">
+
+      
+      { noCredit 
+        ? 
+            ( <div className='no-credit'>
+                    <p>You don't have enough credit to send surveys, please buy credit first then try again.</p>
+              </div>)
+        : null
+      }
+
       <div className="container">
-        {surveys.length ? (
+     
+        { surveys.length? (
           <div className="row surveys-row">
             <DisplaySurveys />
           </div>
@@ -89,28 +116,47 @@ const Dashboard = ({ getSurveys, surveys }) => {
                 loop
               ></Typed>
             </p>
+              {
+                user.credits < 1 
+                ?
+                (<div> 
+                     <div className='directions'> 
+                      <p> To buy credit </p>
+                  </div>
+                    <div className='mock-data'>
+                      
+                        <ul >
+                          <li>Use any mock email </li>
+                          <li>Card Number: "4242" repeated </li>
+                          <li>MM/YY: any future date   </li>
+                          <li>CVC: any three numbers </li>
+                        </ul>
+                    </div>
+                </div>)
+                :null
+              }
+          
           </div>
         )}
       </div>
       
       
-      <div className="fixed-action-btn">
-        <Link to="/surveys/new" className="btn-floating btn-large green">
-          <i className="large material-icons">add</i>
-        </Link>
+      <div className="fixed-action-btn" onClick={handleAddSurvey}>
+        <div className="btn-floating btn-large green">
+            <i className="large material-icons">add</i>
+        </div>
       </div>
               
-    
-
+      
 
     </div>
   );
 };
 
-const mapStateToProps = ({ surveys }) => {
+const mapStateToProps = ({ surveys, auth }) => {
   return {
     surveys: surveys.surveyList,
-  //  user : auth.user
+    user : auth.user
   };
 };
 
