@@ -17,6 +17,17 @@ $color-white : #FFF ;
     }
   }
 
+  
+@keyframes animate-outward {
+  100%   {
+      opacity: 1;
+  }
+ 
+  0% {
+      opacity: 0;
+  }
+}
+
   @keyframes animate-upward {
     0%   {
        margin-top: 200px;
@@ -34,6 +45,15 @@ $color-white : #FFF ;
     animation-delay: .03s;
     animation-fill-mode: forwards;
   }
+
+  %animate-outward-action {
+  opacity: 1;
+  animation-name: animate-outward;
+  animation-duration: 0.4s;
+  animation-delay: .03s;
+  animation-fill-mode: none;
+}
+
   %animate-inward-upward {
     margin-top: 0;
     animation-name: animate-upward;

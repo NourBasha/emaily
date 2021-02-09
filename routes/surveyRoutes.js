@@ -25,8 +25,6 @@ module.exports = app =>{
     });
 
     app.get('/api/surveys/:surveyid/:answer', (req,res)=>{
-        console.log(req.body);
-        //res.send('thanks!');
         res.redirect('/reply/thanks');
     })
 
@@ -34,7 +32,6 @@ module.exports = app =>{
 
     app.post('/api/surveys/webhooks', (req ,res)=>{
 
-        console.log(req.body);
          // template to show exactly what we want to extract from the url, in this case, survey id and the choice
          const p = new Path('/api/surveys/:surveyId/:choice'); 
  

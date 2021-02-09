@@ -15,7 +15,7 @@ const Dashboard = ({ getSurveys, surveys , user, deleteSurvey ,surveyDeleteingFl
 
   const [noCredit, setNoCredit] = useState(false);
   const [welcomeMessagem , setWelcomeMessage] = useState(false);
-  const [sortType, setSortType] = useState(1);
+  const [sortType, setSortType] = useState(0); // 1 date sent , 2  total votes
 
   const history = useHistory();
 
@@ -30,17 +30,14 @@ const Dashboard = ({ getSurveys, surveys , user, deleteSurvey ,surveyDeleteingFl
 
 const handleDeleteSurvey = (surveyID)=>{
 
-  console.log(surveyID);
   setDeletingFlag(true);
   deleteSurvey(surveyID);
 }
 
+
   useEffect(() => {
     
     getSurveys();
-
-
-
 
     if(user){
 
@@ -67,6 +64,8 @@ const handleDeleteSurvey = (surveyID)=>{
 
   }, [getSurveys,noCredit,user]);
 
+
+
   const DisplaySurveys = () => {
 
     let list = [];
@@ -74,7 +73,6 @@ const handleDeleteSurvey = (surveyID)=>{
     if (surveys) {
 
       list = surveys;
-    console.log('before',list);
 
    
     
@@ -91,7 +89,6 @@ const handleDeleteSurvey = (surveyID)=>{
       list.sort((a,b)=>{
        
         if((a.yes + a.no ) < (b.yes + b.no )){
-          console.log('a > b',a.yes + a.no );
           return 1 ;
         }else if((a.yes + a.no) > (b.yes + b.no)){
           return -1;
@@ -99,7 +96,6 @@ const handleDeleteSurvey = (surveyID)=>{
           return 0 ;
         }
     });
-    console.log('after',list);
     }
 
 
@@ -140,7 +136,7 @@ const handleDeleteSurvey = (surveyID)=>{
                     </p>   
                   </div>
                   <span className='delete-survey-span' onClick={ () => handleDeleteSurvey(_id)}> 
-                       <i className='small material-icons right delete-icon'>delete</i>
+                       <i className='tiny material-icons right delete-icon'>delete</i>
                   </span>
                 </div>
               </div>
@@ -155,7 +151,17 @@ const handleDeleteSurvey = (surveyID)=>{
   };
 
 
-  const handleSort = ()=>{
+  const handleSort = (e)=>{  
+
+   
+
+    if(e.target.innerHTML === 'Date sent' ){
+
+      setSortType(1); // date sent
+
+    }else if (e.target.innerHTML === 'Total votes'){
+        setSortType(2); // total votes
+    }
     
   }
 
@@ -174,16 +180,35 @@ const handleDeleteSurvey = (surveyID)=>{
       <div className="container">
      
         { surveys.length? (
-         [ <div className="row surveys-row">
+         [ 
+          <div className='sorting'> 
+
+                           <div className='sort-message'>
+                                  <h6>Sort by</h6>
+                             </div>
+               <div className='sort-div'>
+               <form onClick={handleSort}>
+                    <p>
+                      <label>
+                        <input class="with-gap" name="group1" type="radio"  />
+                        <span>Date sent</span>
+                      </label>
+                    </p>
+                    <p>
+                      <label>
+                        <input class="with-gap" name="group1" type="radio"  />
+                        <span>Total votes</span>
+                      </label>
+                    </p>
+                  </form>
+                 </div>
+            </div> 
+         ,
+         <div className="row surveys-row">
             <DisplaySurveys />
-          </div>,
+          </div>
+          ,
            
-          //   <div className="fixed-action-btn sorting-action" onClick={handleSort}>
-          //   <div className="btn-floating btn-large small">
-          //       <i className="large material-icons">sort</i>
-          //   </div>
-          // </div>
-          // ,
            <div className='overlay'> 
            <LoadingOverlay
              className = 'loading-overlay'

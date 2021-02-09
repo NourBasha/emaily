@@ -32,7 +32,7 @@ const SurveyForm = (props) => {
                     <hr />
 
                 <form className='survey-form'
-                 onSubmit={props.handleSubmit(values =>{ console.log(values) ; props.review()}  )}>
+                 onSubmit={props.handleSubmit(values =>{  props.review()}  )}>
 
 
                   { RenderFields() }

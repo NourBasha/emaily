@@ -11,10 +11,7 @@ const App = (props) => {
   const dispatch = useDispatch(); /// instead of useing connect method on the component ;
 
   useEffect(() => {
-
-    console.log('inside use effect App');
     dispatch(actions.fetchUser());
-
   }, [dispatch]);
 
   return (

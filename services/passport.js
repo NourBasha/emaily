@@ -34,7 +34,7 @@ passport.use(
           const addedUser = await new User({ googleID: profile.id }).save();
       done(null, addedUser);
       } catch (error) {
-        console.log(error);
+        //console.log(error);
       }
     }
   )

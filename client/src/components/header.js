@@ -2,6 +2,8 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import Payments from "./Payments";
 
+import logo from '../assets/logo.png';
+
 const Header = (props) => {
 
   const RenderContent = () => {
@@ -38,7 +40,7 @@ const Header = (props) => {
       <nav className=" header-nav ">
         <div className="nav-wrapper ">
          <Link to={props.auth ? "/surveys" : "/"} className="left brand-logo">
-            Emaily
+           <img className='materialboxed' width='55px' style={{paddingTop:'2px'}} src={logo} alt='' />
           </Link>
         
          

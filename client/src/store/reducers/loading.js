@@ -8,8 +8,6 @@ const initialState = {
 
 const LoadingReducer = (state = initialState , action)=>{
 
-    console.log('loading reducer : ',state.loading );
-
     switch (action.type) {
         case LOADING:
             return{

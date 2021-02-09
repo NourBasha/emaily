@@ -41,7 +41,6 @@ export const getSurveys = () => async dispatch =>{
 }
 
 export const setLoading = (load) => dispatch =>{
-    console.log('inside set loading');
 
     dispatch({type:LOADING, payload: load});
 }

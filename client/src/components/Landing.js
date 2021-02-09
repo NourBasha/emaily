@@ -5,6 +5,7 @@ import stripe from '../assets/stripe.png';
 import sendgrid from '../assets/sendgrid.png';
 import materialize from '../assets/mtz.png';
 
+import logo from '../assets/logo.png';
 
  import {connect} from 'react-redux';
 
@@ -105,7 +106,7 @@ const Landing = ({user}) => {
             style={{ paddingLeft: "0", paddingRight: "0" }}
           >
             <div className="col s12 m6 ">
-                <h3>Emaily</h3>
+            <img className='materialboxed' width='100px' src={logo} alt='' />
                 <p>
                   This website uses Sendgrid library to send real E-mails to real
                   users but with a mock credit card credintials only to showcase

@@ -34,7 +34,6 @@ const SurveyFormReview = ({ review, surveyValues, submitSurvey, surveySending , 
 
   const handleSend = ()=>{
 
-      console.log('isnide click');
      setLoading(true);
      submitSurvey(surveyValues);
 
@@ -44,6 +43,26 @@ const SurveyFormReview = ({ review, surveyValues, submitSurvey, surveySending , 
  
   return (
     <div className='form-review-container'>
+        {
+            surveySending  === true
+            ?  <div className='overlay'> 
+                  <LoadingOverlay
+                    className = 'loading-overlay'
+                    active={surveySending} 
+                    spinner={<PropagateLoader   color={'#0e8befb8'} />}
+                  >
+                
+                  </LoadingOverlay>
+              </div>
+            : surveySending === null 
+              ? <div className='sent-success-message white-text '>
+                  Sent Successfully &nbsp;             
+                 <span className='sent-success-icon'> 
+                    <i className='small material-icons'>done</i>
+                 </span>
+                 </div> 
+              : null
+          }
       <div className="form-review">
         <div className="review-entries">
           
@@ -79,29 +98,10 @@ const SurveyFormReview = ({ review, surveyValues, submitSurvey, surveySending , 
 
         </div>
          
-    </div>
+     </div>
 
 
-    {
-            surveySending  === true
-            ?  <div className='overlay'> 
-                  <LoadingOverlay
-                    className = 'loading-overlay'
-                    active={surveySending} 
-                    spinner={<PropagateLoader   color={'#0e8befb8'} />}
-                  >
-                
-                  </LoadingOverlay>
-              </div>
-            : surveySending === null 
-              ? <div className='sent-success-message white-text '>
-                  Sent Successfully &nbsp;             
-                 <span className='sent-success-icon'> 
-                    <i className='small material-icons'>done</i>
-                 </span>
-                 </div> 
-              : null
-          }
+        
     </div>
   );
 };

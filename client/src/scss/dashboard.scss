@@ -3,7 +3,65 @@
 
 .dashboard{
 
+    .sorting{
 
+        margin: 10px .75rem ;
+        padding: 0 0;
+        background-color: $color-secondary;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        
+    
+        
+        .sort-message{
+            display: flex;
+            justify-content: center;
+            h6{
+                color: $color-white;
+            }
+        }
+    
+    .sort-div{
+      
+        
+        form{
+            display: flex;
+             justify-content: space-evenly;
+             p{
+                 label{
+                    input{
+                        
+                    }
+
+                    [type="radio"].with-gap:checked+span:after {
+                        background-color: $color-hightlight;
+                    }
+                    [type="radio"]:checked+span:after,
+                     [type="radio"].with-gap:checked+span:before,
+                      [type="radio"].with-gap:checked+span:after {
+                        border: 2px solid $color-hightlight-dark;
+                    }
+                    
+
+                    span{
+                        color: $color-white;
+
+                    }
+
+                  
+                   
+                 }
+
+               
+              
+
+             }
+
+           
+        }
+    }
+    }
 
     .surveys-row{
                
@@ -78,6 +136,9 @@
 
                     .card-action{
 
+                        padding-bottom: 5px;
+                        padding-top: 5px;
+
                         .choise{
                             display: inline-block;
                             color: $color-hightlight;
@@ -104,17 +165,14 @@
                         color: $color-hightlight-dark;
                         margin-bottom: 5px;
                         margin-right: 5px;
-                        &:hover{
-                            color: $color-hightlight;
-                            cursor: pointer;
-                        }
 
                         .delete-icon{
                             padding: 5px;
                             border-radius: 50px;
                             &:hover{
                                 background-color: #0000001a;
-
+                                  color: $color-hightlight;
+                                cursor: pointer;
                             }
                         }
                     }
@@ -143,12 +201,21 @@
 
      
         ._loading_overlay_wrapper--active {
-           position: inherit;
+                opacity:    0.5; 
+                background: #000; 
+                width:      100%;
+                height:     100%; 
+                z-index:    10;
+                top:        0; 
+                left:       0; 
+                position:   fixed; 
         }
         .loading-overlay {
             
         }
       }
+
+
     .welcome-message{
 
        .message-wrapper{

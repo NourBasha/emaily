@@ -3,8 +3,6 @@ const keys= require('../../config/keys');
 
 module.exports = (survey) =>{
 
-    console.log('survey object',survey);
-
     return `
 
     <html>
