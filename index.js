@@ -12,7 +12,6 @@ const passport = require('passport');
 require('./models/User');
 // define model = collection into mongoose
 require('./models/Survey');
-
 // passport strategy work 
 require('./services/passport');
 

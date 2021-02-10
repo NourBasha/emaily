@@ -20,7 +20,6 @@ module.exports = (survey) =>{
                         <a href='${keys.redirectDomain}/api/surveys/${survey._id}/no'> No </a> 
                     </div>
                 </div>
-
             </body>
 
     </html>
