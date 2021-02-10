@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import { getSurveys, deleteSurvey , setLoading} from "../store/actions/actions";
 
@@ -83,7 +83,8 @@ const handleDeleteSurvey = (surveyID)=>{
             }else if(a.dateSent > b.dateSent){
               return -1;
             }
-        });
+        }
+        );
     }
      if (sortType === 2) { // total number of votes
       list.sort((a,b)=>{
@@ -190,13 +191,13 @@ const handleDeleteSurvey = (surveyID)=>{
                <form onClick={handleSort}>
                     <p>
                       <label>
-                        <input class="with-gap" name="group1" type="radio"  />
+                        <input className="with-gap" name="group1" type="radio"  />
                         <span>Date sent</span>
                       </label>
                     </p>
                     <p>
                       <label>
-                        <input class="with-gap" name="group1" type="radio"  />
+                        <input className="with-gap" name="group1" type="radio"  />
                         <span>Total votes</span>
                       </label>
                     </p>
@@ -251,10 +252,10 @@ const handleDeleteSurvey = (surveyID)=>{
                         <div className='mock-data'>
                           
                             <ul >
-                              <li>Use any mock email </li>
-                              <li>Card Number: "4242" repeated </li>
-                              <li>MM/YY: any future date   </li>
-                              <li>CVC: any three numbers </li>
+                              <li key='1'>Use any mock email </li>
+                              <li  key='2'>Card Number: "4242" repeated </li>
+                              <li  key='3'>MM/YY: any future date   </li>
+                              <li  key='4'>CVC: any three numbers </li>
                             </ul>
                         </div>
                     </div>)

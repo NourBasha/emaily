@@ -29,7 +29,7 @@ const SurveyFormReview = ({ review, surveyValues, submitSurvey, surveySending , 
         
       }, 1000);
     }
-  },[surveySending])
+  },[surveySending,history,setLoading])
 
 
   const handleSend = ()=>{

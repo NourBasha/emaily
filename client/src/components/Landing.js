@@ -121,15 +121,15 @@ const Landing = ({user}) => {
                 <div className="links">
                   <ul>
                     <li>
-                      <a href="https://sendgrid.com/" className="right-align">
+                      <a href="https://github.com/NourBasha" className="right-align">
                         {" "}
-                        Sendgrid{" "}
+                        Github{" "}
                       </a>
                     </li>
                     <li>
-                      <a href="https://materializecss.com/">
+                      <a href="https://www.linkedin.com/in/nour-wagdy-932918184">
                         {" "}
-                        Materialize CSS{" "}
+                        Linkedin{" "}
                       </a>
                     </li>
                   </ul>

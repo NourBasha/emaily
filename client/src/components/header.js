@@ -43,13 +43,10 @@ const Header = (props) => {
            <img className='materialboxed' width='55px' style={{paddingTop:'2px'}} src={logo} alt='' />
           </Link>
         
-         
-      
           <ul className="right">
               <RenderContent />
             </ul>
-        
-         
+ 
         </div>
       </nav>
     </div>

@@ -17,8 +17,8 @@ const SurveyForm = (props) => {
     const RenderFields = () =>{
 
         return(
-            _.map(FIELDS, ({name,label}, index) =>{
-                return <Field key={index} component={SurveyField} type='text' name={name} label={label} />
+            _.map(FIELDS, ({name,label, placeholder}, index) =>{
+                return <Field key={index} component={SurveyField} type='text' placeholder={`${placeholder}`} name={name} label={label} />
             })
         )
         
@@ -34,15 +34,12 @@ const SurveyForm = (props) => {
                 <form className='survey-form'
                  onSubmit={props.handleSubmit(values =>{  props.review()}  )}>
 
-
                   { RenderFields() }
-    
 
                     <Link to='/surveys' className='red btn-flat left white-text' > 
                         Cancel
                        <i className="tiny material-icons right">cancel</i>
                     </Link>
-
 
                     <button className='teal btn-flat right white-text' 
                               type='submit'> 
