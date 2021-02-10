@@ -14,20 +14,15 @@ import './scss/index.scss';
 
 
 
-// for testing
-import axios from 'axios';
-window.axios = axios;
-
-
 const store = createStore(RootReducer, {},applyMiddleware(reduxThunk));
 
 
 ReactDOM.render(
-    <React.StrictMode>
+    <React.Fragment>
        <Provider store={store}>
             <App />
        </Provider>
-    </React.StrictMode>
+    </React.Fragment>
 
     , document.querySelector('#root')
 )

@@ -13,7 +13,8 @@
          transition: background-color 5000s ease-in-out 0s;
 
          &::placeholder { 
-            -webkit-text-fill-color: #555044;   
+            -webkit-text-fill-color: #63605a;   
+            font-size: 12px;
            }
       
     }

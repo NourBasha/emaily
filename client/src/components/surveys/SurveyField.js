@@ -5,10 +5,16 @@ const SurveyField = ({ input, label, meta: { error, touched } }) => {
     <div className="field">
       {label === "Recipients\u2019 List"
         ? [
-            <label>{label}</label>,
-            <input {...input} placeholder="Comma separated E-mails" />,
+           <span key={label}>
+              <label>{label}</label>,
+            <input {...input} placeholder="Comma separated E-mails" />
+           </span>,
           ]
-        : [<label>{label}</label>, <input {...input} />]}
+        : [
+          <span key={label}>
+             <label>{label}</label>, <input {...input} />
+          </span>
+        ]}
 
       <div className="error-message">{touched && error}</div>
     </div>

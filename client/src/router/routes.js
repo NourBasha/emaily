@@ -8,6 +8,7 @@ import NewSurvey from "../components/surveys/NewSurvey";
 
 import { connect } from "react-redux";
 import ThankUser from "../components/ThankUser";
+import PageNotFound from "../components/page-not-found";
 
 const Routes = ({ user }) => {
   return (
@@ -27,6 +28,8 @@ const Routes = ({ user }) => {
           </Route>
 
           <Route exact path="/reply/thanks" component={ThankUser} />
+
+          <Route path='*' component={PageNotFound}  />
         </Switch>
       </Router>
     </div>

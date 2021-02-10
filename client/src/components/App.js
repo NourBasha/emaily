@@ -25,13 +25,5 @@ const App = (props) => {
 };
 
 
-// const mapStateToProps = ({loading}) => {
-
-//   return{
-//     appLoading  : loading.loading
-//   }
-
-// }
-
 
 export default App; 
